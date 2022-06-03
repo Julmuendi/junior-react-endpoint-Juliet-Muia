@@ -6,7 +6,6 @@
 }
 html,
 body{
-    height: 100vh;
     background-color: #FFFFFF;
     font-family: 'Raleway', sans-serif;
 }
@@ -123,4 +122,42 @@ main{
     line-height: 28.8px;
     size: 18px;
     font-weight: 500px;
+}
+.pdpmain{
+    width:1440px;
+    height: 933px;
+}
+.pdpneedtoknows{
+    position: absolute;
+    height: 595px;
+    width: 1002px;
+    padding:159px 219px 179px 219px;
+    display: flex;
+    flex-direction: row;
+
+}
+.pdpneedtoknows .pdpmainimg{
+    width:610px;
+    height: 511px;
+    left: 219px;
+}
+.pdpproduct-details{
+    position: absolute;
+    left: 929px;
+    top: 160px;
+    width: 292px;
+    height: 595px;
+    margin-left: 100px;
+    font-style: normal;
+}
+.pdpbrandname{
+    line-height: 27px;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+}
+.pdpothernames{
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 27px;
 }
