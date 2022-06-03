@@ -15,14 +15,14 @@ export class Header extends Component {
               <div><a href=''>Kids</a></div>
           
         </div>
-         <img src={logo} className='logo' alt='logo'></img>
-         <div className='cartnprice'>
+        <img src={logo} className='logo' alt='logo'></img>
+        <div className='cartnprice'>
            <div className='pricenvector'>
-              <div>$ <img className='vector' src={Vector} alt='vector'/>
+              <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
               </div>
             </div>
               <div><img src={Cart} className='cart'/></div>
-         </div>
+        </div>
       </div>
     )
   }

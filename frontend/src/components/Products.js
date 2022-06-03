@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
+import CardItem from './CardItem'
 
 export class Products extends Component {
   render() {
     return (
-      <div className='categoryname'>
-        <h2>Category name</h2>
-      </div>
+      <>
+    <section className='categoryname'>
+      <h2>Clothes</h2>
+    </section>
+    <section className='cards'>
+      <CardItem />
+    </section>
+    </>
     )
   }
 }

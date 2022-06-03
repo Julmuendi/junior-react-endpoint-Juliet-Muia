@@ -13,13 +13,7 @@ body{
 a{
     text-decoration: none;
 }
-h2{
-    
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 67.2px;
-    color: #1D1F22;
-}
+
 main{
     position: absolute;
     width: 1140px;
@@ -84,10 +78,49 @@ main{
 
 .categoryname{
     position: absolute;
-    display: flex;
-    align-items: center;
     width: 299px;
     height: 68px;
     left: 101px;
     top: 140px;
+    margin-bottom: 103px;
+    left: 101px;
+
+}
+.categoryname h2{
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 67.2px;
+    color: #1D1F22;
+}
+
+.cards{
+    position: absolute;
+    padding: 252px 102px 269.5px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.card{
+    height: 444px;
+    width: 386px;
+    cursor: pointer;
+}
+
+.card img{
+    width:354px;
+    height: 330px;
+    padding:16px 0 0 16px;
+}
+.card h3{
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28.8px;
+    width: 354px;
+}
+.card h4{
+    font-size: 18px;
+    line-height: 28.8px;
+    size: 18px;
+    font-weight: 500px;
 }
