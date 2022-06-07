@@ -270,6 +270,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-right: 40px;
 
 }
 .pdpmoreimages img{

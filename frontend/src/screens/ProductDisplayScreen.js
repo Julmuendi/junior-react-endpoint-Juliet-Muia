@@ -8,6 +8,13 @@ export class ProductDisplayScreen extends Component {
       <div className='pdpmain'>
         <Header />
         <div className='pdpneedtoknows'>
+          <div className='pdpmoreimages'>
+            <div>
+              <img className='pdpmainimg' src={sweater1} alt=''/>
+            </div>
+            <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
+            <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
+          </div>
           <img className='pdpmainimg' src={sweater1} alt=''/>
         <div className='pdpproduct-details'>
             <div className='pdpbrandname'>
