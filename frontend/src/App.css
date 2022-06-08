@@ -104,11 +104,23 @@ main{
     width: 386px;
     cursor: pointer;
 }
+.card div{
+position: relative;
+overflow: hidden;
+width:354px;
+height: 330px;
+}
 
 .card img{
-    width:354px;
-    height: 330px;
     padding:16px 0 0 16px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+
+  
 }
 .card h3{
     font-weight: 300;
@@ -136,10 +148,22 @@ main{
     flex-direction: row;
 
 }
+.pdpmainimg-wrapper{
+    position: relative;
+    overflow: hidden;
+    
+    
+}
 .pdpmainimg{
+    left: 219px;
     width:610px;
     height: 511px;
-    left: 219px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: 1/1;
+
 }
 .pdpproduct-details{
     position: absolute;
@@ -256,7 +280,7 @@ main{
     border: none;
 }
 .btn-addtocart:hover{
-    pointer:cursor;
+    cursor: pointer;
 }
 .pdpnote{
     font-family: 'Roboto', sans-serif;
@@ -276,4 +300,10 @@ main{
 .pdpmoreimages img{
     width: 79px;
     height: 80px;
+}
+.Loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

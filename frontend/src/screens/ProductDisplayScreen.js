@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import Header from '../components/Header'
 import sweater1 from '../images/sweater1.png'
 
+
 export class ProductDisplayScreen extends Component {
   render() {
+
+
     return (
       <div className='pdpmain'>
         <Header />
@@ -15,7 +18,7 @@ export class ProductDisplayScreen extends Component {
             <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
             <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
           </div>
-          <img className='pdpmainimg' src={sweater1} alt=''/>
+          <div className=''><img className='pdpmainimg' src={sweater1} alt=''/></div>
         <div className='pdpproduct-details'>
             <div className='pdpbrandname'>
               Apollo
