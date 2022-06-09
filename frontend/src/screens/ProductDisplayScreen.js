@@ -1,11 +1,57 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useQuery,gql } from '@apollo/client'
+import { useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
-import sweater1 from '../images/sweater1.png'
+// import { GET_PRODUCT } from '../graphql/Queries'
 
 
-export class ProductDisplayScreen extends Component {
-  render() {
+export default function ProductDisplayScreen() {
+  const params =useParams()
+  const[product, setProduct]=useState({})
+  const GET_PRODUCT=gql`
+  query product ($id:string!) {
+    product(id:$id){
+      id
+      name
+      description
+      attributes{
+        id
+        name
+        type
+        items{
+          id
+          displayValue
+          value
+        }
+      }
+      gallery
+      inStock
+      category
+      brand
+      prices{
+        currency{
+          label
+          symbol
+        }
+        amount
+      }
+    }
+  }
+  `
+  const { loading, error, data }=useQuery(GET_PRODUCT, {variables: {id:params.id}})
 
+
+
+  useEffect(()=>{
+    if(data){
+      console.log(data)
+      setProduct(data.product)
+    }
+  },[data])
+
+  if(loading) return <h2>Loading</h2>
+  if(error) return <h3>something went off</h3>
 
     return (
       <div className='pdpmain'>
@@ -13,21 +59,21 @@ export class ProductDisplayScreen extends Component {
         <div className='pdpneedtoknows'>
           <div className='pdpmoreimages'>
             <div>
-              <img className='pdpmainimg' src={sweater1} alt=''/>
+              <img className='pdpmainimg' src={product.gallery[0]} alt=''/>
             </div>
-            <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
-            <div> <img className='pdpmainimg' src={sweater1} alt=''/></div>
+            <div> <img className='pdpmainimg' src={product.gallery[0]} alt={product.name}/></div>
+            <div> <img className='pdpmainimg' src={product.gallery[0]} alt={product.name}/></div>
           </div>
-          <div className=''><img className='pdpmainimg' src={sweater1} alt=''/></div>
+          <div className=''><img className='pdpmainimg' src={product.gallery[0]} alt=''/></div>
         <div className='pdpproduct-details'>
             <div className='pdpbrandname'>
-              Apollo
+              {product.brand}
             </div>
             <div className='pdpothernames'>
-              Running Short
+              {product.name}
           </div>
           <div className='pdpsize'>
-            <p>size:</p>
+            <p>{product.attributes.name}</p>
           </div>
           <div className='pdpsizing'>
             <div>xs</div>
@@ -61,7 +107,5 @@ export class ProductDisplayScreen extends Component {
         
       </div>
     )
-  }
 }
 
-export default ProductDisplayScreen

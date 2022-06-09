@@ -4,7 +4,7 @@ import { useQuery} from '@apollo/client'
 import CardItem from './CardItem'
 import Header from './Header'
 import { GET_PRODUCTS } from '../graphql/Queries'
-import Loader from './Loader'
+
 
 export default function Products() {
   const[products, setProducts]=useState([])
@@ -23,7 +23,7 @@ export default function Products() {
       }
     }, [data, error, loading, products])
     
-    if(loading){ return <Loader />}
+    if(loading){ return <h2>Loading...</h2>}
     if(error) {return <h4>Something went wrong</h4>}
     return (
       <>
@@ -34,8 +34,6 @@ export default function Products() {
           </section>
           <section className='cards'>
             {products.map((product)=>
-            
-            // <img src={product.gallery[1]} alt=''></img>
               <CardItem key={product.id} product={product} />
             )}   
           </section>

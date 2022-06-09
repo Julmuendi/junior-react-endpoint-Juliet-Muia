@@ -307,3 +307,8 @@ height: 330px;
     justify-content: center;
     align-items: center;
 }
+.headerul Link:hover{
+    color: #53D97B;
+    cursor: pointer;
+    border-bottom: 1px solid #53D97B;
+}

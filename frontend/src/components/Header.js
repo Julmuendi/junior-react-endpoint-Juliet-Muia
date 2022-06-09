@@ -11,7 +11,7 @@ export class Header extends Component {
       <div className='header'>
         <div className='headerul'>
           
-              <div><Link to=''>All</Link></div>
+              <div><Link to='/'>All</Link></div>
               <div><Link to=''>Clothes</Link></div>
               <div><Link to=''>Tech</Link></div>
           
@@ -22,7 +22,7 @@ export class Header extends Component {
               <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
               </div>
             </div>
-              <div><Link to='/cart'><img src={Cart} className='cart'/></Link> </div>
+              <div><Link to='/cart'><img src={Cart} className='cart' alt='cart'/></Link> </div>
         </div>
       </div>
     )
