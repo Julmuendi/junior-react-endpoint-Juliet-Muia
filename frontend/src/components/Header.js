@@ -12,7 +12,7 @@ export class Header extends Component {
         <div className='headerul'>
           
               <div><Link to='/'>All</Link></div>
-              <div><Link to=''>Clothes</Link></div>
+              <div><Link to='/clothes'>Clothes</Link></div>
               <div><Link to=''>Tech</Link></div>
           
         </div>

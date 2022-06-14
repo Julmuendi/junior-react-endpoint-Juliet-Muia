@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import { useQuery} from '@apollo/client'
 import CardItem from './CardItem'
-import Header from './Header'
 import { GET_PRODUCTS } from '../graphql/Queries'
 
 
@@ -15,7 +14,7 @@ export default function Products() {
     useEffect(()=>{
 
       if(data){
-        
+        console.log(data)
         setName(data.category.name)
         setProducts(data.category.products)
         console.log(products)
@@ -27,8 +26,7 @@ export default function Products() {
     if(error) {return <h4>Something went wrong</h4>}
     return (
       <>
-        <main>
-          <Header />
+    
           <section className='categoryname'>
             <h2>{name}</h2>
           </section>
@@ -40,7 +38,7 @@ export default function Products() {
       
          
 
-        </main>
+      
     </>
     )
   }

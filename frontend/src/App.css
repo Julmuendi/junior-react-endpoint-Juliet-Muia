@@ -8,6 +8,7 @@ html,
 body{
     background-color: #FFFFFF;
     font-family: 'Raleway', sans-serif;
+    color: rgba(29, 31, 34, 1);
 }
 a{
     text-decoration: none;
@@ -20,6 +21,7 @@ main{
     margin: auto;
 
 }
+
 .header{
     position: absolute;
     display: flex;
@@ -48,6 +50,7 @@ main{
     line-height: 19.2px;
     align-items: center;
     text-align: center;
+   
 }
 
 .logo{
@@ -67,6 +70,8 @@ main{
     align-items: center;
     gap: 22px;
     position: absolute;
+    float: left;
+    
 
 }
 .currency-symbol{
@@ -102,7 +107,7 @@ main{
 .card{
     height: 444px;
     width: 386px;
-    cursor: pointer;
+    
 }
 .card div{
 position: relative;
@@ -149,22 +154,35 @@ height: 330px;
 
 }
 .pdpmainimg-wrapper{
-    position: relative;
+    position: absolute;
     overflow: hidden;
+    left: 319px;
+    width:510px;
+    height: 511px;
+    
+
     
     
 }
 .pdpmainimg{
-    left: 219px;
-    width:610px;
-    height: 511px;
+
     display: block;
     margin: 0 auto;
-    object-fit: contain;
-    object-position: center;
+    object-fit: cover;
     aspect-ratio: 1/1;
+    object-position: center;
+    width: 100%;
+    
 
 }
+/* .m-img{
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+} */
 .pdpproduct-details{
     position: absolute;
     left: 929px;
@@ -207,18 +225,19 @@ height: 330px;
 }
 .pdpsizing div{
     border: 1px solid black;
-    width: 63px;
-    height: 45px;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-transform: uppercase;
-   font-family: 'Source Sans Pro', sans-serif;
-   font-size: 16px;
-   line-height: 18px;
-   font-weight: 400;
 
+}
+.pdpsizing p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: .2rem;
 }
 .pdpsizing div:hover{
     color: #FFFFFF;
@@ -307,7 +326,7 @@ height: 330px;
     justify-content: center;
     align-items: center;
 }
-.headerul Link:hover{
+.headerul div:hover{
     color: #53D97B;
     cursor: pointer;
     border-bottom: 1px solid #53D97B;
