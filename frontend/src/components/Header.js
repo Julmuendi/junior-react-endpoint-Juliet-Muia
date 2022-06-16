@@ -13,16 +13,18 @@ export class Header extends Component {
           
               <div><Link to='/'>All</Link></div>
               <div><Link to='/clothes'>Clothes</Link></div>
-              <div><Link to=''>Tech</Link></div>
+              <div><Link to='/tech'>Tech</Link></div>
           
         </div>
-        <img src={logo} className='logo' alt='logo'></img>
+        <div className='logowrap'><img src={logo} className='logo' alt='logo'></img></div>
         <div className='cartnprice'>
-           <div className='pricenvector'>
-              <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
+          <div className='cartnprice-content'>
+            <div className='pricenvector'>
+                <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
+                </div>
               </div>
-            </div>
               <div><Link to='/cart'><img src={Cart} className='cart' alt='cart'/></Link> </div>
+            </div>
         </div>
       </div>
     )

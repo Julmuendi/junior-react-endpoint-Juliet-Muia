@@ -4,7 +4,6 @@ import './App.css'
 import Products from './components/Products'
 import CartScreen from './screens/CartScreen'
 import Header from './components/Header'
-import ProductDisplayScreen from './screens/ProductDisplayScreen'
 import{
   ApolloClient,
   ApolloProvider,
@@ -14,6 +13,8 @@ import{
 } from '@apollo/client'
 import { onError} from '@apollo/client/link/error'
 import Clothes from './components/Clothes'
+import Tech from './components/Tech'
+import ProductDisplayScreen from './screens/ProductDisplayScreen'
 
 
 
@@ -31,31 +32,25 @@ const link = from([
   errorLink,
   new HttpLink({uri:'http://localhost:4000/'})
 ])
-// const cache=new InMemoryCache({
-//   typePolicies:{
-//     query:{
-//       fields:{
-//         category:{
-//           fields:{
-//             products:{
-//               keyFields:['id'],
+
+// const cache= new InMemoryCache({
+//   typePolicies: {
+//     Query: {
+//       fields: {
+//         product: {
+//           read(_, { args, toReference }) {
+//             return toReference({
+//               __typename: 'Product',
+//               id: args.id,
+//             });
 //           }
-
-
-  
-
-//           }
-
 //         }
 //       }
 //     }
-//   },
-
-  
-// });
-const cache=new InMemoryCache()
+//   }
+// })
 const client=new ApolloClient({
-  cache,
+  cache:new InMemoryCache(),
   link:link
 })
 
@@ -74,6 +69,7 @@ export class App extends Component {
           <Route path='/product/:id' element={<ProductDisplayScreen />} />
           <Route path='/cart' element={<CartScreen />}/>
           <Route path='/clothes' element={<Clothes />}/>
+          <Route path='/tech' element={<Tech />} />
         </Routes>
         </div>
         </main>
