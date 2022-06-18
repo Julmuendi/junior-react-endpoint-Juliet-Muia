@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react'
 import { useQuery} from '@apollo/client'
 import CardItem from './CardItem'
 import { GET_CLOTHES } from '../graphql/Queries'
+import Loader from './Loader'
 
 export default function Clothes() {
     const[products, setProducts]=useState([])
@@ -21,7 +22,7 @@ export default function Clothes() {
         }
       }, [data, error, loading, products])
       
-      if(loading){ return <h2>Loading...</h2>}
+      if(loading) return <Loader />
       if(error) {return <h4>Something went wrong</h4>}
       return (
         <>

@@ -3,6 +3,7 @@ import { GET_TECH } from '../graphql/Queries'
 import { useState, useEffect} from 'react'
 import { useQuery} from '@apollo/client'
 import CardItem from './CardItem'
+import Loader from './Loader'
 
 
 export default function Tech() {
@@ -22,7 +23,7 @@ export default function Tech() {
         }
       }, [data, error, loading, products])
       
-      if(loading){ return <h2>Loading...</h2>}
+      if(loading) return <Loader />
       if(error) {return <h4>Something went wrong</h4>}
       return (
         <>
