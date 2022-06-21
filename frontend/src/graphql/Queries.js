@@ -70,45 +70,73 @@ query product($id:String!){
 }
 `;
 export const GET_TECH=gql`
-query{
+query tech{
   category(input:{
     title:"tech"
   }){
     name
     products{
-      id
-      name
-      brand
-      prices{
-        currency{
-          symbol
+        id
+        name
+        description
+        attributes{
+          id
+          name
+          type
+          items{
+            id
+            displayValue
+            value
+          }
         }
-        amount
+        gallery
+        inStock
+        category
+        brand
+        prices{
+          currency{
+            label
+            symbol
+          }
+          amount
+        }
       }
-      gallery
     }
   }
-}
 `
 export const GET_CLOTHES=gql`
-query{
+query clothes{
   category(input:{
     title:"clothes"
   }){
     name
     products{
-      id
-      name
-      brand
-      prices{
-        currency{
-          symbol
+        id
+        name
+        description
+        attributes{
+          id
+          name
+          type
+          items{
+            id
+            displayValue
+            value
+          }
         }
-        amount
+        gallery
+        inStock
+        category
+        brand
+        prices{
+          currency{
+            label
+            symbol
+          }
+          amount
+        }
       }
-      gallery
     }
   }
-}
 `
 

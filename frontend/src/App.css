@@ -2,16 +2,23 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  
 }
 
 body{
     background-color: #FFFFFF;
     font-family: 'Raleway', sans-serif;
     color: rgba(29, 31, 34, 1);
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+.container{
+    padding:6% 6% 0 8%;
 }
 a{
     text-decoration: none;
+    color: #1D1F22;
 }
 
 
@@ -56,9 +63,7 @@ a{
    
     
 }
-/* .cartnprice{
 
-} */
 .cartnprice-content{
     margin-top: 43px;
     height: 40px;
@@ -77,26 +82,17 @@ a{
 
 
 
-.categoryname{
-    position: absolute;
-    width: 299px;
-    height: 68px;
-    left: 101px;
-    top: 140px;
-    margin-bottom: 103px;
-    left: 101px;
-
-}
 .categoryname h2{
     font-weight: 400;
     font-size: 42px;
     line-height: 67.2px;
     color: #1D1F22;
+    text-transform: capitalize;
+    margin-bottom: 59px;
 }
 
 .cards{
-    position: absolute;
-    padding: 252px 102px 269.5px 100px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -124,6 +120,26 @@ height: 330px;
 
   
 }
+.card-imagewrapper{
+    width:100%;
+}
+.text-wrapper{
+   width: 100%; 
+   position: relative;
+   margin-top: -65%;
+   margin-left: 28%;
+
+}
+.faded{
+    opacity: 50%;
+}
+.text-wrapper p{
+    font-family: Raleway;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 38.4px;
+}
 .card h3{
     font-weight: 300;
     font-style: normal;
@@ -137,9 +153,7 @@ height: 330px;
     size: 18px;
     font-weight: 500px;
 }
-.pdpmain{
-   margin-top: 80px;
-}
+
 .pdpneedtoknows{
     display: flex;
     flex-direction: row;
@@ -152,34 +166,23 @@ height: 330px;
 }
 .pdpmainimg-wrapper{
     overflow: hidden;
-    /* width:610px;
-    height: 511px; */
-
-    
-
-    
+    width:610px;
+    height: 511px;
+    display: flex;
+    flex-direction: column;
     
 }
 .pdpmainimg{
-
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
+    object-fit: cover;
     aspect-ratio: 1/1;
-    object-position: center;
     width: 100%;
+    margin-top: 0;
+    padding: 0;
+    top:-80%;
     
 
 }
 
-.pdpproduct-details{
-    /* width: 292px;
-    height: 595px; */
-    font-style: normal;
-}
-.details-container{
-    /* margin-left: 50px; */
-}
 .pdpbrandname{
     line-height: 27px;
     font-size: 30px;
@@ -193,7 +196,7 @@ height: 330px;
 }
 .pdpsize{
 
-    margin-top: 43px;
+    margin-top: 36px;
 }
 .pdpsize p{
     font-family: 'Roboto Condensed', sans-serif;
@@ -204,6 +207,7 @@ height: 330px;
     text-align:left;
 }
 .pdpsizing{
+    margin-top: 8px;
     display: flex;
     flex-direction: row;
     gap: 12px;
@@ -213,6 +217,9 @@ height: 330px;
     width: 63px;
     height: 45px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .pdpsizing p{
@@ -289,20 +296,21 @@ height: 330px;
 .btn-addtocart:hover{
     cursor: pointer;
 }
-.pdpnote{
+.pdpnote {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 25.59px;
+    width: 292px;
+    height: 103px;
+    
 }
-.pdpmoreimages{
+
+
+.pdpmoreimages-imgwrapper{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: right;
-
-}
-.pdpmoreimages-imgwrapper{
     width: 79px;
     height: 80px;
 }
