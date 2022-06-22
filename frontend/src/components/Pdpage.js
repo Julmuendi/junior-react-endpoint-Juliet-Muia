@@ -1,11 +1,14 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 
 import Attributes from './Attributes'
 
-export default function Pdpage({data}) {
+export default function Pdpage({history, data}) {
   console.log(data)
-    
+  const navigate=useNavigate()
+    const addToCartHandler=()=>{
+     navigate('/cart')
+    }
   return (
     <>
     
@@ -43,7 +46,11 @@ export default function Pdpage({data}) {
           <div className='pdp-price-value'>
             <p>{data.product.prices[0].currency.symbol}<span>{data.product.prices[0].amount}</span></p>
           </div>
-          <button className='btn-addtocart'>Add to cart</button>
+          <button 
+          className='btn-addtocart'
+          onClick={addToCartHandler}>
+            Add to cart
+          </button>
           <div className='pdpnote'><p>{data.product.description}</p></div>
           </div>
           </div>
