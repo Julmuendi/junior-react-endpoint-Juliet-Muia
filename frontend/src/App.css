@@ -193,10 +193,11 @@ height: 330px;
     font-size: 30px;
     font-weight: 400;
     line-height: 27px;
+    font-family: Raleway;
 }
 .pdpsize{
 
-    margin-top: 36px;
+    margin-top: 20px;
 }
 .pdpsize p{
     font-family: 'Roboto Condensed', sans-serif;
@@ -327,3 +328,59 @@ a:hover{
     border-bottom: 2px solid #53D97B;
     transform: scale(1.3);
 }
+.cart-title{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+}
+.cartItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #F2F2F2;
+    border-top: 1px solid #F2F2F2;
+    width: 100%;
+    height: 336px;
+
+}
+.cartItem .first-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.second-column{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.cartItem .second-column .qtyselector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.qtyselector .sign{
+    height: 45px;
+    width: 45px;
+    border: 1px solid #1D1F22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+.qtyselector .qty{
+    height: 198px;
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+    

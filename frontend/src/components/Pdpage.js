@@ -2,13 +2,14 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Attributes from './Attributes'
+import { cartItemsVar } from '../cartfunctionality/Cartcache'
 
 export default function Pdpage({history, data}) {
   console.log(data)
-  const navigate=useNavigate()
-    const addToCartHandler=()=>{
-     navigate('/cart')
-    }
+  // const navigate=useNavigate()
+  //   const addToCartHandler=()=>{
+  //    navigate('/cart')
+  //   }
   return (
     <>
     
@@ -48,7 +49,7 @@ export default function Pdpage({history, data}) {
           </div>
           <button 
           className='btn-addtocart'
-          onClick={addToCartHandler}>
+          onClick={()=> cartItemsVar([...cartItemsVar(),data.product])}>
             Add to cart
           </button>
           <div className='pdpnote'><p>{data.product.description}</p></div>

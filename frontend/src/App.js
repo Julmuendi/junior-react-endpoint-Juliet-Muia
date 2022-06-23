@@ -15,6 +15,7 @@ import { onError} from '@apollo/client/link/error'
 import Clothes from './components/Clothes'
 import Tech from './components/Tech'
 import ProductDisplayScreen from './screens/ProductDisplayScreen'
+import { cartItemsVar } from './cartfunctionality/Cartcache'
 
 
 
@@ -33,24 +34,21 @@ const link = from([
   new HttpLink({uri:'http://localhost:4000/'})
 ])
 
-// const cache= new InMemoryCache({
-//   typePolicies: {
-//     Query: {
-//       fields: {
-//         product: {
-//           read(_, { args, toReference }) {
-//             return toReference({
-//               __typename: 'Product',
-//               id: args.id,
-//             });
-//           }
-//         }
-//       }
-//     }
-//   }
-// })
+export const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        cartItems: {
+          read() {
+            return cartItemsVar();
+          }
+        }
+      }
+    }
+  }
+});
 const client=new ApolloClient({
-  cache:new InMemoryCache(),
+  cache,
   link:link
 })
 

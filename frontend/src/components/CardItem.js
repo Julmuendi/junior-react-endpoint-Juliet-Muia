@@ -1,7 +1,6 @@
-import { useApolloClient, useLazyQuery, useQuery } from '@apollo/client'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { GET_PRODUCT } from '../graphql/Queries'
+
 
 
 export function CardItem({product}) {
