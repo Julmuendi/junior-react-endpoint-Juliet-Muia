@@ -1,7 +1,14 @@
 import React from 'react'
+import { useState } from 'react'
 import Attributes from '../components/Attributes'
+import './carousel.css'
+import backArrow from '../images/backArrow.png'
+import forwardArrow from '../images/forwardArrow.png'
+
 
 export default function CartItem({ product }) {
+  const[currImage, setCurrImage]=useState(0)
+  
   return (
     <div className='cartItem'>
         <div className='first-column'>
@@ -24,7 +31,21 @@ export default function CartItem({ product }) {
                 <div className='sign'>-</div>
             </div>
             
-            <img src={product.gallery[0]} alt={product.name} /> 
+            <div className='carousel'>
+                <div className='carouselInner'
+                    style={{backgroundImage:`url(${product.gallery[currImage]})`}}
+                >
+                    <div className='carouselArrows'>
+                        <div className='Arrow' onClick={()=>{currImage > 0 && setCurrImage(currImage-1)}}><img src={backArrow} alt=''/></div>
+                        <div className='Arrow' onClick={()=>{currImage < product.gallery.length-1 && setCurrImage(currImage+1)}}><img src={forwardArrow} alt=''/></div>
+                        
+
+
+                    </div>
+                
+
+                </div>
+            </div>
             
         </div>
     </div>

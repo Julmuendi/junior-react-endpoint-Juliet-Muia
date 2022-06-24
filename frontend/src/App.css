@@ -353,7 +353,7 @@ a:hover{
 .second-column{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .cartItem .second-column .qtyselector{
