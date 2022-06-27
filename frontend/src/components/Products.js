@@ -15,10 +15,10 @@ export default function Products() {
     useEffect(()=>{
 
       if(data){
-        console.log(data)
+       
         setName(data.category.name)
         setProducts(data.category.products)
-        console.log(products)
+      
        
       }
     }, [data, error, loading, products])

@@ -23,7 +23,9 @@ export class Header extends Component {
                 <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
                 </div>
               </div>
-              <div><Link to='/cart'><img src={Cart} className='cart' alt='cart'/></Link> </div>
+              <div><Link to='/cart'><img src={Cart} className='cart' alt='cart'/>
+                <div id='cartqty'></div>
+              </Link> </div>
             </div>
         </div>
       </div>

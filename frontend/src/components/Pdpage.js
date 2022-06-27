@@ -1,15 +1,27 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-
+import React, { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Attributes from './Attributes'
 import { cartItemsVar } from '../cartfunctionality/Cartcache'
 
-export default function Pdpage({history, data}) {
-  console.log(data)
-  // const navigate=useNavigate()
-  //   const addToCartHandler=()=>{
-  //    navigate('/cart')
-  //   }
+
+export default function Pdpage({data}) {
+ 
+ 
+  const navigate=useNavigate()
+
+
+  function onAdd(){
+    navigate('/cart')
+      
+      const existItem=cartItemsVar(cartItemsVar()).find(x => x.id === data.product.id)
+
+      if(existItem){
+        cartItemsVar((cartItemsVar())).map(x => x.id === data.product.id ? existItem : x)
+      }else{
+        cartItemsVar([...cartItemsVar(), data.product])
+      }
+
+  }
   return (
     <>
     
@@ -49,7 +61,7 @@ export default function Pdpage({history, data}) {
           </div>
           <button 
           className='btn-addtocart'
-          onClick={()=> cartItemsVar([...cartItemsVar(),data.product])}>
+          onClick={onAdd}>
             Add to cart
           </button>
           <div className='pdpnote'><p>{data.product.description}</p></div>

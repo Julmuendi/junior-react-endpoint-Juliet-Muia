@@ -6,9 +6,17 @@ import backArrow from '../images/backArrow.png'
 import forwardArrow from '../images/forwardArrow.png'
 
 
-export default function CartItem({ product }) {
+export default function CartItem({ product}) {
   const[currImage, setCurrImage]=useState(0)
+  const[qty, setQty]=useState(1)
+  const[data, setData]=useState()
+  const[price, setPrice]=useState()
   
+    
+    
+
+  
+
   return (
     <div className='cartItem'>
         <div className='first-column'>
@@ -26,9 +34,9 @@ export default function CartItem({ product }) {
         </div>
         <div className='second-column'>
             <div className='qtyselector'>
-                <div className='sign'>+</div>
-                <div className='qty'>3</div>
-                <div className='sign'>-</div>
+                <div className='sign' onClick={()=>{qty>=1 && setQty(qty+1)}}>+</div>
+                <div className='qty'>{qty}</div>
+                <div className='sign' onClick={()=>{qty>=1 && setQty(qty-1)}}>-</div>
             </div>
             
             <div className='carousel'>

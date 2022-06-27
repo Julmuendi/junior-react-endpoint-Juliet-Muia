@@ -18,7 +18,7 @@ export default function Tech() {
           
           setName(data.category.name)
           setProducts(data.category.products)
-          console.log(products)
+         
          
         }
       }, [data, error, loading, products])

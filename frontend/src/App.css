@@ -188,6 +188,7 @@ height: 330px;
     font-size: 30px;
     font-weight: 600;
     font-style: normal;
+    margin-top: 10px;
 }
 .pdpothernames{
     font-size: 30px;
@@ -342,7 +343,7 @@ a:hover{
     border-bottom: 1px solid #F2F2F2;
     border-top: 1px solid #F2F2F2;
     width: 100%;
-    height: 336px;
+    height: auto;
 
 }
 .cartItem .first-column{
@@ -361,18 +362,19 @@ a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 22.5px;
  
 }
 
 .qtyselector .sign{
     height: 45px;
     width: 45px;
-    border: 1px solid #1D1F22;
+    border: 1px solid #727374;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    cursor: pointer;
 }
 .qtyselector .qty{
     height: 198px;
@@ -381,6 +383,32 @@ a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+   
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row button{
+    padding: 16px 32px;
+    background-color: #5ECE7B;
+    color: white;
+    text-transform: uppercase;
+    width: 279px;
+    height: 43px;
+    border: none;
+}
+.row .identifier{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.row .value{
+    font-size:24px;
+    font-weight:700; 
+    line-height:28px; 
 }
     

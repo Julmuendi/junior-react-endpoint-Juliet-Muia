@@ -17,7 +17,7 @@ export default function Clothes() {
           
           setName(data.category.name)
           setProducts(data.category.products)
-          console.log(products)
+  
          
         }
       }, [data, error, loading, products])
