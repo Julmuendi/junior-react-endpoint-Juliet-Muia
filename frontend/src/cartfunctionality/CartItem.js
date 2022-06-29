@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Attributes from '../components/Attributes'
 import './carousel.css'
@@ -13,19 +13,19 @@ export default function CartItem({ product}) {
  
 
 
-  const theItem=cartItemsVar(cartItemsVar()).find((x)=>x.id === product.id)
-  const index=cartItemsVar(cartItemsVar()).findIndex((x)=>x.id === product.id)
+    const theItem=cartItemsVar(cartItemsVar()).find((x)=>x.id === product.id)
+    const index=cartItemsVar(cartItemsVar()).findIndex((x)=>x.id === product.id)
+
+
   
 
-  const increaseQty=(e)=>{
+  const increaseQty=()=>{
     cartItemsVar(cartItemsVar())[index].quantity=theItem.quantity+1
     console.log(product.quantity)
-   
-
-    
   
   }
-  const decreaseQty=(e)=>{
+
+  const decreaseQty=()=>{
     if(theItem.quantity>=1){
         cartItemsVar(cartItemsVar())[index].quantity=theItem.quantity-1
         
