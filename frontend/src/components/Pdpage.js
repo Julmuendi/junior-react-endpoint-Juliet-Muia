@@ -20,7 +20,7 @@ export default function Pdpage({data}) {
       }else{
         cartItemsVar([...cartItemsVar(), data.product])
       }
-
+      cartItemsVar([...cartItemsVar()].map((product)=>({...product, quantity:1})))
   }
   return (
     <>

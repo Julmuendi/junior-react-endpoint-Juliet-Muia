@@ -46,17 +46,6 @@ export const cache = new InMemoryCache({
       }
     }
   },
-    Product: {
-      fields: { 
-        isInCart: { 
-          read(_, { variables }) { 
-            return localStorage.getItem('CART').includes(
-              variables.productId
-            );
-          }
-        }
-      }
-    }
 });
 const client=new ApolloClient({
   cache,

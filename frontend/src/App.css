@@ -14,7 +14,7 @@ body{
     overflow-x: hidden;
 }
 .container{
-    padding:6% 6% 0 8%;
+    padding:5% 5% 0 8%;
 }
 a{
     text-decoration: none;
@@ -74,6 +74,11 @@ a{
     gap: 22px;
 }
 
+.cartqty{
+    position: relative;
+    top:-60%;
+}
+
 .currency-symbol{
     font-weight: 500px;
     size: 18px;
@@ -88,7 +93,7 @@ a{
     line-height: 67.2px;
     color: #1D1F22;
     text-transform: capitalize;
-    margin-bottom: 59px;
+   
 }
 
 .cards{
@@ -366,10 +371,10 @@ a:hover{
  
 }
 
-.qtyselector .sign{
+.qtyselector button{
     height: 45px;
     width: 45px;
-    border: 1px solid #727374;
+    border:1px solid #727374;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -4,17 +4,37 @@ import Attributes from '../components/Attributes'
 import './carousel.css'
 import backArrow from '../images/backArrow.png'
 import forwardArrow from '../images/forwardArrow.png'
+import { cartItemsVar } from './Cartcache'
+import { useReactiveVar } from '@apollo/client'
 
 
 export default function CartItem({ product}) {
   const[currImage, setCurrImage]=useState(0)
-  const[qty, setQty]=useState(1)
-  const[data, setData]=useState()
-  const[price, setPrice]=useState()
+ 
+
+
+  const theItem=cartItemsVar(cartItemsVar()).find((x)=>x.id === product.id)
+  const index=cartItemsVar(cartItemsVar()).findIndex((x)=>x.id === product.id)
   
+
+  const increaseQty=(e)=>{
+    cartItemsVar(cartItemsVar())[index].quantity=theItem.quantity+1
+    console.log(product.quantity)
+   
+
+    
+  
+  }
+  const decreaseQty=(e)=>{
+    if(theItem.quantity>=1){
+        cartItemsVar(cartItemsVar())[index].quantity=theItem.quantity-1
+        
+    }
     
     
 
+}
+  
   
 
   return (
@@ -34,9 +54,9 @@ export default function CartItem({ product}) {
         </div>
         <div className='second-column'>
             <div className='qtyselector'>
-                <div className='sign' onClick={()=>{qty>=1 && setQty(qty+1)}}>+</div>
-                <div className='qty'>{qty}</div>
-                <div className='sign' onClick={()=>{qty>=1 && setQty(qty-1)}}>-</div>
+                <button className='plusSign' onClick={increaseQty}>+</button>
+                <div className='qty'>{product.quantity}</div>
+                <button className='minusSign' onClick={decreaseQty}>-</button>
             </div>
             
             <div className='carousel'>

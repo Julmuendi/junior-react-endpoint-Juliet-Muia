@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Vector from '../images/Vector.png'
 import Cart from '../images/Cart.png'
+import { cartItemsVar } from '../cartfunctionality/Cartcache'
 
 
-export class Header extends Component {
-  render() {
+export default function Header() {
+  const cartItems=cartItemsVar(cartItemsVar())
+  console.log(cartItems.length)
     return (
       <div className='header'>
         <div className='headerul'>
@@ -23,14 +25,15 @@ export class Header extends Component {
                 <div><span className='currency-symbol'>$</span> <img className='vector' src={Vector} alt='vector'/>
                 </div>
               </div>
-              <div><Link to='/cart'><img src={Cart} className='cart' alt='cart'/>
-                <div id='cartqty'></div>
-              </Link> </div>
+              <div><Link to='/cart'>
+                <img src={Cart} className='cart' alt='cart'/>
+              </Link> 
+              <div id='cartqty'>{cartItems.length>0 && cartItems.length}</div>
+            </div>
             </div>
         </div>
       </div>
     )
   }
-}
 
-export default Header
+
