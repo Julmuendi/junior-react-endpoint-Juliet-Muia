@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import Attributes from '../components/Attributes'
 import './carousel.css'
 import backArrow from '../images/backArrow.png'
 import forwardArrow from '../images/forwardArrow.png'
 import { cartItemsVar } from './Cartcache'
-import { useReactiveVar } from '@apollo/client'
+
 
 
 export default function CartItem({ product}) {

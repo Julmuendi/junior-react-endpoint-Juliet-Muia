@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useQuery, useReactiveVar } from '@apollo/client'
+import React from 'react'
+import { useReactiveVar } from '@apollo/client'
 import CartItem from '../cartfunctionality/CartItem'
 import { cartItemsVar } from '../cartfunctionality/Cartcache'
 

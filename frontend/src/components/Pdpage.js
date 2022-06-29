@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Attributes from './Attributes'
 import { cartItemsVar } from '../cartfunctionality/Cartcache'
+import  parse  from 'html-react-parser'
 
 
 export default function Pdpage({data}) {
@@ -64,7 +65,7 @@ export default function Pdpage({data}) {
           onClick={onAdd}>
             Add to cart
           </button>
-          <div className='pdpnote'><p>{data.product.description}</p></div>
+          <div className='pdpnote'><p>{parse(data.product.description)}</p></div>
           </div>
           </div>
 
